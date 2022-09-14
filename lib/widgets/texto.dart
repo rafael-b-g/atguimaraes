@@ -46,7 +46,7 @@ class Texto extends StatelessWidget {
 
       case TipoTexto.primarioSemibold:
         fontSize = 16;
-        fontWeight = FontWeight.w600;
+        fontWeight = FontWeight.w500;
 
         break;
 
