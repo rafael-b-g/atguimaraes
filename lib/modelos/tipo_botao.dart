@@ -1,0 +1,4 @@
+enum TipoBotao {
+  primario,
+  secundario
+}
