@@ -90,6 +90,8 @@ class Texto extends StatelessWidget {
         color: cor,
         fontSize: fontSize,
         fontWeight: fontWeight,
+        decoration: TextDecoration.none,
+        height: 1.3,
       ),
     );
   }
