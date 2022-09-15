@@ -65,7 +65,7 @@ class Botao extends StatelessWidget {
   }
 }
 
-class Link extends StatelessWidget {
+class Link extends StatefulWidget {
   const Link({
     Key? key,
     required this.texto,
@@ -73,10 +73,37 @@ class Link extends StatelessWidget {
   }) : super(key: key);
 
   final String texto;
-  final Function onClick;
+  final void Function() onClick;
 
   @override
+  State<Link> createState() => _LinkState();
+}
+
+class _LinkState extends State<Link> {
+  bool _sublinhado = false;
+  @override
   Widget build(BuildContext context) {
-    return Container();
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      onEnter: (_) {
+        setState(() {
+          _sublinhado = true;
+        });
+      },
+      onExit: (_) {
+        setState(() {
+          _sublinhado = false;
+        });
+      },
+      child: GestureDetector(
+        onTap: widget.onClick,
+        child: Texto(
+          widget.texto,
+          tipoTexto: TipoTexto.primarioBold,
+          cor: Cores.destaque,
+          sublinhado: _sublinhado,
+        ),
+      ),
+    );
   }
 }

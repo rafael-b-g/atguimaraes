@@ -8,11 +8,13 @@ class Texto extends StatelessWidget {
     Key? key,
     required this.tipoTexto,
     required this.cor,
+    this.sublinhado = false,
   }) : super(key: key);
 
   final String texto;
   final TipoTexto tipoTexto;
   final Color cor;
+  final bool sublinhado;
 
   @override
   Widget build(BuildContext context) {
@@ -90,7 +92,10 @@ class Texto extends StatelessWidget {
         color: cor,
         fontSize: fontSize,
         fontWeight: fontWeight,
-        decoration: TextDecoration.none,
+        decoration: sublinhado ? TextDecoration.underline : TextDecoration.none,
+        decorationColor: cor,
+        decorationStyle: TextDecorationStyle.solid,
+        decorationThickness: 0.8,
         height: 1.3,
       ),
     );
