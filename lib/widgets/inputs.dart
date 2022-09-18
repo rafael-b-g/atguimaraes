@@ -116,7 +116,7 @@ class _InputState extends State<Input> {
                 decoration: TextDecoration.none,
                 height: 1.3,
               ),
-              maxLines: null,
+              maxLines: widget.esconderTexto ? 1 : null,
             ),
           ),
         ),
