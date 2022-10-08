@@ -84,6 +84,7 @@ class Texto extends StatelessWidget {
     }
     return Text(
       texto,
+      textAlign: TextAlign.center,
       style: TextStyle(
         fontFamily: defaultTargetPlatform == TargetPlatform.macOS ||
                 defaultTargetPlatform == TargetPlatform.iOS
